@@ -1,18 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvhpay2mkvq3a"]
+[gd_scene load_steps=6 format=3 uid="uid://cvhpay2mkvq3a"]
 
 [ext_resource type="Script" uid="uid://d0ur5747yfomg" path="res://player.gd" id="1_15wuk"]
 [ext_resource type="Texture2D" uid="uid://b3oyn62kjlf85" path="res://Character.png" id="2_gnnrh"]
 [ext_resource type="PackedScene" uid="uid://bbj6r2lxo3dg2" path="res://EnemySpawner.tscn" id="3_a3t8j"]
 [ext_resource type="PackedScene" uid="uid://cdd72xtdvteb2" path="res://Enemy.tscn" id="4_5qhct"]
-[ext_resource type="Script" path="res://path_follow_2d.gd" id="4_gnnrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0qx2"]
-
-[sub_resource type="Curve2D" id="Curve2D_15wuk"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 78, 1, 0, 0, 0, 0, -114, 2, 0, 0, 0, 0, -242, 1, 0, 0, 0, 0, -406, 2)
-}
-point_count = 4
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,19 +27,9 @@ offset_right = 86.0
 offset_bottom = 36.0
 text = "Score = 0"
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_a3t8j")]
-position = Vector2(553, 355)
-
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Enemy" parent="." instance=ExtResource("4_5qhct")]
 position = Vector2(604, 362)
-curve = SubResource("Curve2D_15wuk")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(78, 1)
-rotation = 3.13638
-script = ExtResource("4_gnnrh")
-
-[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_5qhct")]
-position = Vector2(77.9937, 1.40625)
-rotation = -3.13638
 scale = Vector2(1, 1)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(987, 320)
