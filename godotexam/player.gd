@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var speed = 400
 @export var score = 0
 
+func increase_score(amount: int) -> void:
+	score+= amount
+	
 func _process(delta: float) -> void:
 	$"../Label".text = "SCORE: " + str(score)
 
@@ -13,3 +16,4 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+	
