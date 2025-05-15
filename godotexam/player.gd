@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@export var lives = 5
+@export var lives = 10
 @export var enemies = 0
 
 func increase_score(amount: int) -> void:
 	lives+= amount
+	
 	
 func increase_enemy(amount: int) -> void:
 	enemies+= amount

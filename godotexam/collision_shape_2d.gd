@@ -14,6 +14,10 @@ func _process(delta):
 
 	position += velocity * delta
 	
+	if $"../CharacterBody2D".lives == 0:
+		queue_free()
+		
+	
 
 
 
