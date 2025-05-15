@@ -5,6 +5,7 @@ extends Node2D
 const ENEMY = preload("res://Enemy.tscn")
 
 func _on_timer_timeout() -> void:
+	$"../CharacterBody2D".increase_enemy(1)
 	var newEnemy = ENEMY.instantiate()
 	
 	get_parent().add_child(newEnemy)

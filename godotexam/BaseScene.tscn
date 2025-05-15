@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvhpay2mkvq3a"]
+[gd_scene load_steps=10 format=3 uid="uid://cvhpay2mkvq3a"]
 
 [ext_resource type="Script" uid="uid://d0ur5747yfomg" path="res://player.gd" id="1_15wuk"]
 [ext_resource type="Texture2D" uid="uid://b3oyn62kjlf85" path="res://Character.png" id="2_gnnrh"]
 [ext_resource type="PackedScene" uid="uid://bbj6r2lxo3dg2" path="res://EnemySpawner.tscn" id="3_a3t8j"]
 [ext_resource type="PackedScene" uid="uid://cdd72xtdvteb2" path="res://Enemy.tscn" id="4_5qhct"]
+[ext_resource type="PackedScene" uid="uid://c3a0csf8fmn07" path="res://EnemySpawner2.tscn" id="5_5qhct"]
+[ext_resource type="PackedScene" uid="uid://bsy7yff60e0or" path="res://EnemySpawner3.tscn" id="6_8kiex"]
+[ext_resource type="PackedScene" uid="uid://bp3nl6a4f0yr6" path="res://EnemySpawner4.tscn" id="7_1b13d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0qx2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5qhct"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,9 +32,73 @@ offset_right = 86.0
 offset_bottom = 36.0
 text = "Score = 0"
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 53.0
+offset_right = 105.0
+offset_bottom = 76.0
+text = "Enemies = 0"
+
 [node name="Enemy" parent="." instance=ExtResource("4_5qhct")]
 position = Vector2(604, 362)
-scale = Vector2(1, 1)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_a3t8j")]
 position = Vector2(987, 320)
+
+[node name="EnemySpawner15" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(1295, 194)
+
+[node name="EnemySpawner17" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(1155, 154)
+
+[node name="EnemySpawner18" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(1172, 283)
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("5_5qhct")]
+position = Vector2(1123, 50)
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(1109, 106)
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("6_8kiex")]
+position = Vector2(1316, 157)
+
+[node name="EnemySpawner13" parent="." instance=ExtResource("6_8kiex")]
+position = Vector2(1260, 249)
+
+[node name="EnemySpawner14" parent="." instance=ExtResource("6_8kiex")]
+position = Vector2(1416, 149)
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("5_5qhct")]
+position = Vector2(1182, 330)
+
+[node name="EnemySpawner6" parent="." instance=ExtResource("7_1b13d")]
+position = Vector2(1334, 416)
+
+[node name="EnemySpawner7" parent="." instance=ExtResource("3_a3t8j")]
+position = Vector2(1271, 585)
+
+[node name="EnemySpawner8" parent="." instance=ExtResource("7_1b13d")]
+position = Vector2(1254, 454)
+
+[node name="EnemySpawner10" parent="." instance=ExtResource("7_1b13d")]
+position = Vector2(1268, 514)
+
+[node name="EnemySpawner11" parent="." instance=ExtResource("7_1b13d")]
+position = Vector2(1436, 357)
+
+[node name="EnemySpawner12" parent="." instance=ExtResource("7_1b13d")]
+position = Vector2(1211, 112)
+
+[node name="EnemySpawner9" parent="." instance=ExtResource("5_5qhct")]
+position = Vector2(1334, 278)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_5qhct")]
+position = Vector2(1223, 209)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+position = Vector2(-2014, 169)
+scale = Vector2(-4485.36, -6241.18)
+mesh = SubResource("QuadMesh_5qhct")
