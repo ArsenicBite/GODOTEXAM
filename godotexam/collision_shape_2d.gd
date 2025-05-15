@@ -8,7 +8,7 @@ var is_hit = false
 
 
 func _process(delta):
-	#rotation += angular_speed * delta
+	rotation += angular_speed * delta
 
 	var velocity = Vector2.LEFT * speed
 
